@@ -10,10 +10,11 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    let data = ["Apples", "Oranges", "Pears", "Bananas", "Plums", "Mango", "Pineapple", "Watermelon", "Peach", "Avocado", "Strawberry", "Blackberry", "Durian", "Jackfruit", "Dragonfruit", "Salak"]
+    var data = [String]()
     var filteredData: [String]!
     var dataDict = [String: [String]]()
     var dataSectTitles = [String]()
+    var myContacts = [Contact]()
     
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
@@ -21,10 +22,52 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
-        //api.APIcall()
-        filteredData = data
-        makeSections()
+        APIcall()
     }
+    //call API
+    func APIcall() {
+        let contactURL = "https://randomuser.me/api/?results=20"
+        let request = NSMutableURLRequest(url: NSURL(string: contactURL)! as URL, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
+                    request.httpMethod = "GET"
+        let session = URLSession.shared
+        let task = session.dataTask(with: request as URLRequest, completionHandler: handle(data: response: error:))
+        task.resume()
+    }
+
+    func handle(data: Data?, response: URLResponse?, error: Error?) {
+        if error != nil {
+            print(error ?? "")
+        }
+        let httpResponse = response as? HTTPURLResponse
+        print(httpResponse ?? "")
+        if let safeData = data {
+            let dataString = String(data: safeData, encoding: .utf8)
+            print(dataString ?? "")
+            self.parseJSON(contactData: safeData)
+        }
+    }
+    
+    func parseJSON(contactData: Data)  {
+        let decoder = JSONDecoder()
+        do {
+            let decodeData = try decoder.decode(ContactData.self, from: contactData)
+            DispatchQueue.main.async {
+                for i in 0...19 {
+                    let myContact = Contact(name: String(decodeData.results[i].name.first + " " + decodeData.results[i].name.last), dob: String(decodeData.results[i].dob.date), email: String(decodeData.results[i].email), cell: String(decodeData.results[i].cell), country: String(decodeData.results[i].location.country))
+                    self.myContacts.append(myContact)
+                    self.data.append(self.myContacts[i].name)
+                }
+                self.filteredData = self.data
+                self.makeSections()
+                print(self.myContacts[19].name)
+                //print(decodeData.results[10].name.first)
+                self.tableView.reloadData()
+            }
+        } catch {
+            print(error)
+        }
+    }
+    //layout
     func numberOfSections(in tableView: UITableView) -> Int {
         return dataSectTitles.count
     }
@@ -38,11 +81,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //print(data[indexPath.row])
         let sect = dataSectTitles[indexPath.section]
         let sectRow = dataDict[sect]![indexPath.row]
         print(sectRow)
-        //print(dataSectTitles[indexPath.section])
         performSegue(withIdentifier: "toDetailScreen", sender: self)
     }
     
@@ -71,6 +112,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func makeSections() {
+        print("hello")
         for fData in filteredData {
             let key = String(fData.prefix(1))
             if var d = dataDict[key] {
