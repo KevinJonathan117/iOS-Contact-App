@@ -38,19 +38,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(data[indexPath.row])
+        //print(data[indexPath.row])
+        let sect = dataSectTitles[indexPath.section]
+        let sectRow = dataDict[sect]![indexPath.row]
+        print(sectRow)
+        //print(dataSectTitles[indexPath.section])
+        performSegue(withIdentifier: "toDetailScreen", sender: self)
     }
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        print(data[indexPath.row])
-//        //performSegue(withIdentifier: "toDetailScreen", sender: self)
-//    }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.destination is ViewDetailController {
-//            //print(tempName)
-//            print("Yes")
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is ViewDetailController {
+            //print(tempName)
+        }
+    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")! as UITableViewCell

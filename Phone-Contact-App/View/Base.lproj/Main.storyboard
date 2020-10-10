@@ -42,11 +42,28 @@
                     <navigationItem key="navigationItem" title="Contact" id="eMX-q0-SjR"/>
                     <connections>
                         <outlet property="tableView" destination="4Ku-dS-zCh" id="1GF-4u-Ydk"/>
+                        <segue destination="Whs-xU-pzk" kind="show" identifier="toDetailScreen" id="6Cx-To-X7A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1042.0289855072465" y="121.875"/>
+        </scene>
+        <!--Detail Contact-->
+        <scene sceneID="azm-Ha-sGN">
+            <objects>
+                <viewController id="Whs-xU-pzk" customClass="ViewDetailController" customModule="Phone_Contact_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="i4D-OL-yox">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="tPG-kX-txz"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Detail Contact" id="vcW-5u-9gr"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pet-fF-r6y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1897" y="122"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HxY-4e-IQG">
