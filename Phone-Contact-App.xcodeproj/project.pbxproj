@@ -14,7 +14,6 @@
 		81F048812530601500DA9413 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81F048802530601500DA9413 /* Assets.xcassets */; };
 		81F048842530601500DA9413 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81F048822530601500DA9413 /* LaunchScreen.storyboard */; };
 		81F0488F2531A47200DA9413 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F0488E2531A47200DA9413 /* Contact.swift */; };
-		81F048912531A64200DA9413 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F048902531A64200DA9413 /* API.swift */; };
 		81F048B52531EA3F00DA9413 /* ViewDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F048B42531EA3F00DA9413 /* ViewDetailController.swift */; };
 /* End PBXBuildFile section */
 
@@ -28,7 +27,6 @@
 		81F048832530601500DA9413 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		81F048852530601500DA9413 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		81F0488E2531A47200DA9413 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
-		81F048902531A64200DA9413 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		81F048B42531EA3F00DA9413 /* ViewDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDetailController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,7 +93,6 @@
 			isa = PBXGroup;
 			children = (
 				81F0488E2531A47200DA9413 /* Contact.swift */,
-				81F048902531A64200DA9413 /* API.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -176,7 +173,6 @@
 				81F048782530600700DA9413 /* AppDelegate.swift in Sources */,
 				81F048B52531EA3F00DA9413 /* ViewDetailController.swift in Sources */,
 				81F0487A2530600700DA9413 /* SceneDelegate.swift in Sources */,
-				81F048912531A64200DA9413 /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

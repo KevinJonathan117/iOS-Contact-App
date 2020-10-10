@@ -10,9 +10,27 @@ import UIKit
 
 class ViewDetailController: UIViewController {
 
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var dobLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var cellLabel: UILabel!
+    @IBOutlet weak var countryLabel: UILabel!
+    
+    var toLabel : String = ""
+    var myNewContacts = [Contact]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        nameLabel.text = toLabel
+        for i in 0...19 {
+            if(self.myNewContacts[i].name == toLabel) {
+                dobLabel.text = "DoB: " + self.myNewContacts[i].dob
+                emailLabel.text = "Email: " + self.myNewContacts[i].email
+                cellLabel.text = "Cell: " + self.myNewContacts[i].cell
+                countryLabel.text = "Country: " + self.myNewContacts[i].country
+                break
+            }
+        }
         // Do any additional setup after loading the view.
     }
     

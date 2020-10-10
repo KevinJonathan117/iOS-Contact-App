@@ -56,14 +56,71 @@
                     <view key="view" contentMode="scaleToFill" id="i4D-OL-yox">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sGR-e7-UBz">
+                                <rect key="frame" x="20" y="138" width="374" height="29"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DoB" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nvl-Ex-Lgk">
+                                <rect key="frame" x="20" y="187" width="374" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uFm-VS-8p7">
+                                <rect key="frame" x="20" y="226.5" width="374" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cell" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o3G-48-dtv">
+                                <rect key="frame" x="20" y="266" width="374" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DUg-v9-Qsr">
+                                <rect key="frame" x="20" y="305.5" width="374" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="tPG-kX-txz" firstAttribute="trailing" secondItem="sGR-e7-UBz" secondAttribute="trailing" constant="20" id="523-Mr-Ad6"/>
+                            <constraint firstItem="tPG-kX-txz" firstAttribute="trailing" secondItem="o3G-48-dtv" secondAttribute="trailing" constant="20" id="7BC-2p-m36"/>
+                            <constraint firstItem="tPG-kX-txz" firstAttribute="trailing" secondItem="uFm-VS-8p7" secondAttribute="trailing" constant="20" id="8SI-yE-2S6"/>
+                            <constraint firstItem="Nvl-Ex-Lgk" firstAttribute="leading" secondItem="tPG-kX-txz" secondAttribute="leading" constant="20" id="FUQ-kT-pMZ"/>
+                            <constraint firstItem="sGR-e7-UBz" firstAttribute="leading" secondItem="tPG-kX-txz" secondAttribute="leading" constant="20" id="IvW-n6-6NY"/>
+                            <constraint firstItem="o3G-48-dtv" firstAttribute="leading" secondItem="tPG-kX-txz" secondAttribute="leading" constant="20" id="JtL-mB-wqm"/>
+                            <constraint firstItem="o3G-48-dtv" firstAttribute="top" secondItem="uFm-VS-8p7" secondAttribute="bottom" constant="20" id="Qdv-NW-d0I"/>
+                            <constraint firstItem="uFm-VS-8p7" firstAttribute="top" secondItem="Nvl-Ex-Lgk" secondAttribute="bottom" constant="20" id="Tuk-Ia-kwD"/>
+                            <constraint firstItem="DUg-v9-Qsr" firstAttribute="top" secondItem="o3G-48-dtv" secondAttribute="bottom" constant="20" id="aUL-Kq-5HL"/>
+                            <constraint firstItem="o3G-48-dtv" firstAttribute="top" secondItem="uFm-VS-8p7" secondAttribute="bottom" constant="20" id="aqd-Kh-8Ia"/>
+                            <constraint firstItem="tPG-kX-txz" firstAttribute="trailing" secondItem="Nvl-Ex-Lgk" secondAttribute="trailing" constant="20" id="b6K-Tp-Yxf"/>
+                            <constraint firstItem="uFm-VS-8p7" firstAttribute="leading" secondItem="tPG-kX-txz" secondAttribute="leading" constant="20" id="dQG-bH-6iO"/>
+                            <constraint firstItem="DUg-v9-Qsr" firstAttribute="leading" secondItem="tPG-kX-txz" secondAttribute="leading" constant="20" id="eRY-38-akd"/>
+                            <constraint firstItem="Nvl-Ex-Lgk" firstAttribute="top" secondItem="sGR-e7-UBz" secondAttribute="bottom" constant="20" id="oX5-sJ-SPi"/>
+                            <constraint firstItem="sGR-e7-UBz" firstAttribute="top" secondItem="tPG-kX-txz" secondAttribute="top" constant="50" id="pra-5w-raA"/>
+                            <constraint firstItem="tPG-kX-txz" firstAttribute="trailing" secondItem="DUg-v9-Qsr" secondAttribute="trailing" constant="20" id="yIz-PD-KRc"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="tPG-kX-txz"/>
                     </view>
                     <navigationItem key="navigationItem" title="Detail Contact" id="vcW-5u-9gr"/>
+                    <connections>
+                        <outlet property="cellLabel" destination="o3G-48-dtv" id="AUo-mg-kdl"/>
+                        <outlet property="countryLabel" destination="DUg-v9-Qsr" id="phC-zh-aU1"/>
+                        <outlet property="dobLabel" destination="Nvl-Ex-Lgk" id="aUS-5S-doF"/>
+                        <outlet property="emailLabel" destination="uFm-VS-8p7" id="10A-XU-UiK"/>
+                        <outlet property="nameLabel" destination="sGR-e7-UBz" id="9le-hK-ehV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pet-fF-r6y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1897" y="122"/>
+            <point key="canvasLocation" x="1895.6521739130437" y="121.875"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HxY-4e-IQG">

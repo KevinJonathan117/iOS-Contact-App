@@ -15,6 +15,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var dataDict = [String: [String]]()
     var dataSectTitles = [String]()
     var myContacts = [Contact]()
+    var tempName : String = ""
     
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
@@ -59,12 +60,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 }
                 self.filteredData = self.data
                 self.makeSections()
-                print(self.myContacts[19].name)
                 //print(decodeData.results[10].name.first)
                 self.tableView.reloadData()
             }
         } catch {
             print(error)
+            let alert = UIAlertController(title: "Error", message: "App failed to load the data", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            
+            self.present(alert, animated: true)
         }
     }
     //layout
@@ -83,13 +87,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let sect = dataSectTitles[indexPath.section]
         let sectRow = dataDict[sect]![indexPath.row]
-        print(sectRow)
+        tempName = sectRow
         performSegue(withIdentifier: "toDetailScreen", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.destination is ViewDetailController {
-            //print(tempName)
+        if let vc = segue.destination as? ViewDetailController {
+            vc.toLabel = tempName
+            vc.myNewContacts = myContacts
         }
     }
     
@@ -112,7 +117,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func makeSections() {
-        print("hello")
         for fData in filteredData {
             let key = String(fData.prefix(1))
             if var d = dataDict[key] {
